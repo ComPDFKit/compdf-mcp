@@ -1,276 +1,348 @@
-# ComPDF AI (Formerly ComIDP) for MCP Server
+![compdf-github-banner 1](assets/compdf-github-banner%201.png)
 
-As part of the KDAN ecosystem, ComPDF AI for MCP Server delivers **Intelligent Document Extraction**—automatically extracting key information from unstructured documents (such as PDFs or images), converting it into structured data, and supporting batch processing to significantly boost document handling efficiency.
+# ComPDF MCP
 
-> If you find this library helpful, please consider giving us a ⭐ **Star** on GitHub! Have feedback or questions? Join the conversation in our [Discussions](https://github.com/ComPDFKit/ComIDP-MCP-Server/discussions).
+ComPDF MCP is built for MCP clients and AI agent platforms. It provides PDF/image parsing and data extraction, PDF conversion, PDF editing, and image conversion capabilities. It helps users process raw documents first, then pass lighter, cleaner, and more structured results into AI, reducing token usage, lowering AI costs, and improving overall processing efficiency.
 
-**Why ComPDF AI for MCP Server?**
+> * If you find ComPDF MCP useful, please consider giving us a ⭐ **Star** on GitHub. It helps us grow and improve.
+> * Got questions or ideas? Join the conversation in our [Discussions](https://github.com/ComPDFKit/compdf-mcp/discussions).
 
-- **Batch Processing for Real Efficiency:** Handle large volumes of documents at once. Batch processing significantly speeds up your workflow and reduces operational overhead.
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/docker-supported-blue" alt="Docker"></a>
+  <a href="#"><img src="https://img.shields.io/github/stars/ComPDFKit/compdf-mcp" alt="GitHub Stars"></a>
+  <a href="#"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome"></a>
+</p>
 
-- **From Unstructured to Actionable:** Transform messy PDFs and scanned images into structured, machine-readable data that can be easily used in databases, analytics, or downstream applications.
+<p align="center">
+  <a href="#why-choose-compdf-mcp"><b>Why Choose ComPDF MCP</b></a> •
+  <a href="#capabilities"><b>Capabilities</b></a> •
+  <a href="#technical-architecture"><b>Technical Architecture</b></a> •
+  <a href="#quick-start"><b>Quick Start</b></a> •
+  <a href="#deployment-and-operations"><b>Deployment and Operations</b></a> •
+  <a href="#license-and-free-access"><b>License and Free Access</b></a> •
+  <a href="#use-cases-and-example-prompts"><b>Use Cases and Example Prompts</b></a> •
+  <a href="#support"><b>Support</b></a>
+</p>
 
-- **Boost Document Handling Productivity:** Eliminate bottlenecks in document processing. Focus on insights and decisions, while ComPDF AI handles the extraction automatically and accurately.
+## Why Choose ComPDF MCP
 
-- **Native MCP Server Architecture:** Designed as an MCP server, it seamlessly integrates with any MCP-compatible client (Claude Desktop, Cursor, Windsurf, Cline, and more), enabling standardized, context-aware document intelligence workflows and effortless scalability.
+The core reason users choose ComPDF MCP is not simply to let AI work with PDFs. It is to process complex, lengthy, and noisy source documents into inputs that are easier for models to understand before handing them off to AI for analysis, summarization, Q&A, or automation.
 
-## Table of Contents
+Raw PDFs, scanned files, and image files are often larger, noisier, and less stable in structure. By using ComPDF MCP for conversion, extraction, and page-level processing first, then sending the results into AI, users can:
 
-- [What is ComPDF AI for MCP Server](#what-is-compdf-ai-for-mcp-server)
-- [Quick Start](#quick-start)
-- [Installation](#installation)
-- [Configuration](#configuration)
-  - [Claude Desktop](#claude-desktop)
-  - [Cursor](#cursor)
-  - [Other MCP Clients](#other-mcp-clients)
-- [API Reference](#api-reference)
-- [Example Output](#example-output)
-- [Free Trial and License](#free-trial-and-license)
-- [FAQ](#faq)
-- [Support](#support)
+- Reduce AI token usage
+- Lower AI costs
+- Shorten response time
+- Improve the quality of structured outputs
+- Avoid wasting model budget on noisy raw files
+- Handle both PDF and image processing through one MCP service
+- Fit document-heavy workflows and multi-platform agent scenarios
 
-## What is ComPDF AI for MCP Server
+This approach is especially valuable when processing reports, contracts, invoices, tables, scanned files, and similar documents in bulk. In these cases, a "process documents first, then call AI" workflow is usually more cost-efficient and better suited for downstream automation than sending original files directly to the model.
 
-**ComPDF AI for MCP Server** is a lightweight Model Context Protocol (MCP) server designed for seamless integration with [ComPDF AI](https://www.compdf.com/solutions/intelligent-document-processing?utm_source=Code&utm_campaign=github_mcpserver_20250912&utm_medium=GitHub). It connects AI chatbots and MCP-compatible clients to ComPDF AI's Intelligent Document Processing (IDP) capabilities, enabling you to extract structured data from PDFs and images directly within your AI workflow. The service returns results in structured plain-text format, enabling downstream processing or archival.
+## Capabilities
 
-**Supported document types:** PDF, PNG, JPG, TIFF, and other common image formats.
+ComPDF MCP focuses on three major capability groups: document conversion, PDF operations, and intelligent parsing and data extraction.
+
+### 1. PDF and Image Conversion
+
+| Capability            | Description                                                                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PDF to Word           | Convert PDF files into editable Word documents while preserving the original layout, text, images, and formatting as much as possible.                    |
+| PDF to Excel          | Convert PDF files into Excel workbooks with support for tables, numbers, and structured business data.                                                    |
+| PDF to Slide          | Convert PDF pages into editable PowerPoint slides while preserving the original layout and visual structure as much as possible.                          |
+| PDF to HTML           | Convert PDF files into HTML for web display and content reuse while retaining text, images, tables, and layout.                                           |
+| PDF to RTF            | Convert PDF files into RTF documents with support for text and image content.                                                                             |
+| PDF to Image          | Convert PDF pages into PNG or JPG images with configurable resolution and DPI.                                                                            |
+| PDF to CSV            | Extract tables from PDF files and export them as CSV, either table by table or as merged output.                                                          |
+| PDF to TXT            | Extract text from PDF or scanned PDF files and save it as plain text.                                                                                     |
+| PDF to JSON           | Extract text, tables, and images from PDF files and save them as structured JSON.                                                                         |
+| PDF to Markdown       | Convert PDF files into Markdown for easier reuse in knowledge bases, developer docs, blog systems, and AI workflows.                                      |
+| PDF to Searchable PDF | Run OCR on scanned PDFs and output searchable PDFs with selectable, copyable, and highlightable text for retrieval, archiving, and downstream processing. |
+| PDF to OFD            | Convert PDF files into OFD files for OFD archiving, document circulation, and localized office scenarios.                                                 |
+| Word to PDF           | Convert Word documents into PDF while preserving layout, fonts, images, and page structure as much as possible for sharing, archiving, and printing.      |
+| PNG to PDF            | Convert PNG images into PDF for easier packaging, sharing, printing, and archiving of screenshots, design files, or supporting image materials.           |
+| RTF to PDF            | Convert RTF documents into PDF while preserving core text styling and layout for consistent cross-device viewing and formal output.                       |
+| Excel to PDF          | Convert Excel workbooks or spreadsheets into PDF for report sharing, printing, archiving, and preventing accidental formula edits.                        |
+| TXT to PDF            | Convert plain TXT files into PDF, making logs, notes, and text instructions easier to organize as fixed-layout documents.                                 |
+| CSV to PDF            | Convert CSV table data into PDF for snapshot sharing, review, printing, and business archiving.                                                           |
+| Slide to PDF          | Convert PowerPoint presentations into PDF for presentation distribution, cross-device viewing, and formal record keeping.                                 |
+| HTML to PDF           | Convert HTML pages or content fragments into PDF for webpage preservation, report export, email archiving, and printable output.                          |
+| Image to Word         | Convert JPG, JPEG, PNG, and BMP image files into editable Word documents.                                                                                 |
+| Image to Excel        | Convert image files into Excel workbooks with support for tables, text, and numeric content.                                                              |
+| Image to PPT          | Convert image files into editable PowerPoint slides while preserving visible layout and content structure as much as possible.                            |
+| Image to PDF          | Convert JPG, JPEG, PNG, BMP, and similar image files into PDF for consolidating, sharing, printing, and archiving one or multiple images.                 |
+| Image to HTML         | Convert image files into HTML while preserving text, layout, tables, and major visual elements as much as possible.                                       |
+| Image to RTF          | Convert image files into RTF documents with support for extracted text and images.                                                                        |
+| Image to CSV          | Extract tables from image files and export them as CSV.                                                                                                   |
+| Image to TXT          | Extract text from image files and save it as plain text.                                                                                                  |
+| Image to JSON         | Extract text, tables, and images from image files and save them as structured JSON.                                                                       |
+
+### 2. PDF Editing, Protection, and Comparison
+
+| Capability           | Description                                                                  |
+| -------------------- | ---------------------------------------------------------------------------- |
+| Merge PDF Files      | Combine multiple PDF files into a single PDF document.                       |
+| Split PDF Files      | Split one PDF file into multiple smaller PDF files.                          |
+| Rotate PDF Pages     | Rotate selected PDF pages by 90, 180, or 270 degrees.                        |
+| Delete PDF Pages     | Remove one or more pages from a PDF file.                                    |
+| Insert PDF Pages     | Insert pages from another PDF into an existing PDF.                          |
+| Extract PDF Pages    | Extract selected pages or page ranges and save them as a new file.           |
+| Convert PDF Standard | Convert a PDF conformance or archival standard.                              |
+| Add Watermark        | Add text or image watermarks to PDF files for branding or usage control.     |
+| Remove Watermark     | Remove text or image watermarks from supported PDF files.                    |
+| Compress PDF         | Reduce PDF file size for easier storage, upload, and sharing.                |
+| Encrypt PDF          | Protect PDF files with AES encryption and permission controls.               |
+| Decrypt PDF          | Remove passwords from authorized PDF files for internal processing or reuse. |
+| Compare PDFs         | Compare the content differences between two PDF files.                       |
+
+### 3. Intelligent Parsing and Data Extraction
+
+| Capability                                       | Description                                                                                                     |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Intelligent Document Parsing                     | Parse PDFs and images into structured document output for agents, automation workflows, and downstream systems. |
+| Intelligent Data Extraction from PDFs and Images | Extract valuable business data such as text, tables, and content fields from PDFs and images.                   |
+
+## Technical Architecture
+
+This project is an **MCP Streamable HTTP** service built with Python, FastMCP, and Starlette. Tool parameter schemas are generated from the bundled official OpenAPI parameter snapshot, and the service rejects unknown parameters.
+
+Clients can access every tool through the aggregate endpoint:
+
+```text
+http://127.0.0.1:8000/mcp
+```
+
+If you only need part of ComPDF MCP, use the module endpoints below:
+
+| Module                                  | MCP Endpoint          | Business Tools | Representative Tools                                                       |
+| --------------------------------------- | --------------------- | --------------:| -------------------------------------------------------------------------- |
+| PDF and Image Conversion                | `/mcp/conversion/mcp` | 28             | `pdf_to_word`, `pdf_to_markdown`, `image_to_json`, `word_to_pdf`, and more |
+| Intelligent Parsing and Data Extraction | `/mcp/ai/mcp`         | 2              | `document_parse`, `document_extract`                                       |
+| PDF Editing, Protection, and Comparison | `/mcp/pdf/mcp`        | 13             | `merge_pdf`, `add_watermark`, `encrypt_pdf`, `compare_pdf`, and more       |
+| All capabilities                        | `/mcp`                | 44             | All tools above                                                            |
+
+All business tools use a shared file-input shape. Keys in `options` must use the camelCase parameter names from the ComPDF API documentation. Only `htmlFile`, `templateFile`, `dataFile`, `imageFile`, and `iccFile` may be uploaded through `special_files`.
+
+```json
+{
+  "files": [
+    {
+      "filename": "report.pdf",
+      "content_base64": "JVBERi0xLjc...",
+      "content_type": "application/pdf"
+    }
+  ],
+  "options": {
+    "pageRanges": "1-3,6",
+    "enableOcr": 1
+  },
+  "special_files": {
+    "imageFile": {
+      "filename": "watermark.png",
+      "content_base64": "iVBORw0..."
+    }
+  }
+}
+```
+
+The decoded size of an individual Base64 file is limited to 100 MB. Synchronous tool responses include the ComPDF result, the relevant official documentation URL, and a statement that download URLs expire after 24 hours.
 
 ## Quick Start
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/ComPDFKit/comidp-mcp.git
-cd comidp-mcp
+### 1. Install and Run the Service
 
-# 2. Set up the environment
-pip install uv
-cd src
+Prerequisite: Python 3.10+. From the repository root, create a virtual environment and install the package in editable mode.
+
+Windows:
+
+```powershell
 python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -e .
+Copy-Item .env.example .env
+compdf-streaming-mcp
+```
 
-# Windows
-.venv\Scripts\activate
+Linux / macOS:
 
-# Linux / macOS
+```bash
+python3 -m venv .venv
 source .venv/bin/activate
-
-pip install -r requirements.txt
-
-# 3. Configure your MCP client (see Configuration section below)
-
-# 4. Restart your MCP client and start extracting!
+pip install -e .
+cp .env.example .env
+compdf-streaming-mcp
 ```
 
-## Installation
+The service listens on `0.0.0.0:8000` by default. Use these endpoints to check its status:
 
-### Prerequisites
+- `GET /healthz`: service status and mounted MCP routes.
+- `GET /readyz`: readiness status without calling the upstream ComPDF API.
+- `GET /metrics`: request counters in Prometheus text format.
 
-- **Python 3.10+**
-- **pip** (Python package installer)
-- **uv** — install with `pip install uv`
-- **ComPDF MCP repository**
-- **OS:** Windows, Linux, or macOS
+### 2. Configure the Service
 
-### Steps
+Copy `.env.example` to `.env`, then adjust settings for the deployment environment. The server does **not** store or configure a user's ComPDF API key. Each MCP request supplies that user's key through the `X-ComPDF-API-Key` header. You can [sign up for ComPDF Portal](https://www.compdf.com/compdf-portal/signin?utm_source=github&utm_medium=referral&utm_campaign=compdf_mcp_rep_eno&ref_platform_id=github_compdf_mcp_en) and copy your free API key from the location shown below.
 
-1. Clone the repository and navigate to the source directory:
+![b0a118c5-b3f5-4bc7-bae7-3d0adfc634b2](assets/api_key.png)
 
-```bash
-git clone https://github.com/ComPDFKit/comidp-mcp.git
-cd comidp-mcp/src
+```dotenv
+COMPDF_API_BASE_URL=https://api-server.compdf.com/server
+COMPDF_API_TIMEOUT_SECONDS=180
+MCP_HOST=0.0.0.0
+MCP_PORT=8000
+MCP_ALLOWED_HOSTS=localhost,localhost:*,127.0.0.1,127.0.0.1:*,mcp.example.com
+MCP_RATE_LIMIT_PER_MINUTE=120
 ```
 
-2. Create a virtual environment and install dependencies:
+For mainland China accounts, use `COMPDF_API_BASE_URL=https://api-server.compdf.cn/server`. In production, add the reverse-proxy domain to `MCP_ALLOWED_HOSTS`; include a non-default port or use `mcp.example.com:*` when appropriate.
 
-**Windows:**
+### 3. Configure an MCP Client
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
+The examples below use the unified MCP URL `http://127.0.0.1:8000/mcp`. For a remote deployment, replace it with the public HTTPS address, for example `https://your-domain.example/mcp`.
+
+First obtain a personal ComPDF API key ([sign up to get your free API key](https://www.compdf.com/compdf-portal/signin?utm_source=github&utm_medium=referral&utm_campaign=compdf_mcp_rep_eno&ref_platform_id=github_compdf_mcp_en)). For clients that use environment variables, set it on the client machine first:
+
+```powershell
+$env:COMPDF_API_KEY = "your-own-compdf-api-key"
 ```
 
-**Linux / macOS:**
+#### Codex
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+Add the remote MCP service to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.compdf]
+url = "http://127.0.0.1:8000/mcp"
+env_http_headers = { "X-ComPDF-API-Key" = "COMPDF_API_KEY" }
+tool_timeout_sec = 180
 ```
 
-## Configuration
+#### Claude (Claude Code)
 
-Add the comidp-mcp server configuration to your MCP client's config file. Replace the paths and API key with your actual values.
-
-> **Important:** All paths must be **absolute paths**. The virtual environment Python path should point to the Python executable inside your `.venv` directory.
-
-### Claude Desktop
-
-1. Open Claude Desktop.
-2. Click the Claude icon in the top-left corner → **File → Settings → Developer → Edit Config**.
-3. Add the following to your `claude_desktop_config.json`:
+Add the following MCP server to the user-level configuration file `~/.claude.json`. `COMPDF_API_KEY` must be available in the terminal session used to start Claude Code:
 
 ```json
 {
   "mcpServers": {
-    "comidp-mcp": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--directory",
-        "C:/path/to/comidp-mcp/src",
-        "C:/path/to/comidp-mcp/src/comidp_tools.py"
-      ],
-      "env": {
-        "IDPKEY": "your_idp_key_here"
+    "compdf": {
+      "type": "http",
+      "url": "http://127.0.0.1:8000/mcp",
+      "headers": {
+        "X-ComPDF-API-Key": "${COMPDF_API_KEY}"
       }
     }
   }
 }
 ```
 
-**Path examples:**
+If `~/.claude.json` already has configuration, merge `compdf` into the existing `mcpServers` object instead of overwriting the file.
 
-| OS          | Python venv path                                 |
-| ----------- | ------------------------------------------------ |
-| Windows     | `C:\path\to\comidp-mcp\.venv\Scripts\python.exe` |
-| Linux/macOS | `/path/to/comidp-mcp/.venv/bin/python`           |
+#### GitHub Copilot (VS Code)
 
-### Cursor
-
-Add the server to your Cursor MCP settings (`.cursor/mcp.json` in your project root, or via Cursor Settings → MCP):
+Run **MCP: Open User Configuration** from the VS Code Command Palette, or create `.vscode/mcp.json` in the workspace, then add the following configuration. VS Code prompts for the API key in a password field on first use:
 
 ```json
 {
-  "mcpServers": {
-    "comidp-mcp": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--directory",
-        "/path/to/comidp-mcp/src",
-        "/path/to/comidp-mcp/src/comidp_tools.py"
-      ],
-      "env": {
-        "IDPKEY": "your_idp_key_here"
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "compdf-api-key",
+      "description": "ComPDF API Key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "compdf": {
+      "type": "http",
+      "url": "http://127.0.0.1:8000/mcp",
+      "headers": {
+        "X-ComPDF-API-Key": "${input:compdf-api-key}"
       }
     }
   }
 }
 ```
 
-### Other MCP Clients
+#### Cursor
 
-For any MCP-compatible client (Windsurf, Cline, etc.), add a server entry with:
+Open **Cursor Settings > Tools & MCP**, select **New MCP Server**, or edit `~/.cursor/mcp.json`, then add:
 
-- **Command:** `uv`
-- **Args:** `["run", "--directory", "/path/to/comidp-mcp/src", "/path/to/comidp-mcp/src/comidp_tools.py"]`
-- **Environment variable:** `IDPKEY=your_idp_key_here`
-
-Refer to your client's documentation for how to register MCP servers.
-
-### Verify Installation
-
-After restarting your MCP client, you can verify the server is running by:
-
-1. **Claude Desktop:** Check the Developer settings — the `comidp-mcp` server should show as connected (green indicator).
-2. **Cursor:** Open MCP settings — the server status should be "Active".
-3. **Test it:** Ask your AI client to extract data from a sample PDF file.
-
-## API Reference
-
-### `data_extraction`
-
-Extract data from specified PDF or image files and save results to TXT files.
-
-```python
-def data_extraction(
-    filenames: list,
-    save_dir_path: str = "output",
-    key: str = "",
-    err_msg_lang: str = "en"
-) -> Dict[str, str]:
-    """
-    Params:
-        filenames: A list of PDF or image file paths.
-        save_dir_path: Folder where the result TXT files will be saved.
-        key: The API key for IDPKEY. Required on the first call;
-             subsequent calls reuse the cached key automatically.
-        err_msg_lang: Language code for error messages ('en' or 'zh'). Defaults to 'en'.
-
-    Returns:
-        A dictionary mapping each input file path to its output TXT file path.
-        If an error occurs, the value will be an error message.
-    """
+```json
+{
+  "mcpServers": {
+    "compdf": {
+      "url": "http://127.0.0.1:8000/mcp",
+      "headers": {
+        "X-ComPDF-API-Key": "your-own-compdf-api-key"
+      }
+    }
+  }
+}
 ```
 
-**Example call (via AI client):**
+This Cursor configuration stores the key in a local configuration file. Do not commit `~/.cursor/mcp.json` or a project-level configuration file that contains the key.
 
-> "Extract data from `/documents/invoice.pdf` and save the results to `/output/`"
+All clients must send `X-ComPDF-API-Key` with every MCP request. Do not pass the key as a tool argument, URL parameter, or chat message.
 
-### `data_extraction_from_folder`
+### 4. Asynchronous and Presigned Uploads
 
-Extract data from all PDF or image files in a folder.
+In addition to the 44 synchronous business tools, each module provides `list_operations` and these task tools:
 
-```python
-def data_extraction_from_folder(
-    folder: str,
-    save_dir_path: str,
-    recursive: bool = False,
-    key: str = "",
-    err_msg_lang: str = "en"
-) -> Dict[str, str]:
-    """
-    Params:
-        folder: Path to the folder containing PDF or image files.
-        save_dir_path: Path to the folder where the result files will be saved.
-        recursive: If true, recursively search subdirectories for files.
-        key: The API key for IDPKEY. Required on the first call;
-             subsequent calls reuse the cached key automatically.
-        err_msg_lang: Language code for error messages ('en' or 'zh'). Defaults to 'en'.
+- `start_async_operation`: invokes the matching `/v2/processAsync/...` endpoint for long-running or multi-file work.
+- `get_task_status`: queries task status from `/v2/task/taskInfo`.
+- `create_presigned_upload`, `upload_presigned_file`, and `start_presigned_operation`: create a presigned task, upload the file, and start the task in sequence.
 
-    Returns:
-        A dictionary mapping each input file path to its output TXT file path.
-        If an error occurs, the value will be an error message.
-    """
+Presigned uploads support only operations with one standard file. Use asynchronous mode for PDF merging, comparison, page inserting, and more. The presigned URL remains only in the creating module server's memory and is never exposed as a tool argument or response field.
+
+## Deployment and Operations
+
+Build and run the service with Docker Compose:
+
+```powershell
+docker compose up --build
 ```
 
-**Example call (via AI client):**
+In production, expose the aggregate endpoint as `https://your-domain.example/mcp` behind an HTTPS reverse proxy, and configure `MCP_ENV=production`, `MCP_PUBLIC_URL`, `MCP_OAUTH_ISSUER_URL`, and `MCP_STATIC_TOKENS_JSON`. When enabled, clients must also send `Authorization: Bearer <token>`; this service token is separate from each user's ComPDF API key. See [DEPLOYMENT.md](DEPLOYMENT.md) for image transfer, HTTPS proxy, update, and rollback instructions.
 
-> "Extract data from all PDFs in `/documents/2024/` recursively, and save to `/output/2024/`"
+## License and Free Access
 
-## Example Output
+ComPDF MCP can be used for free, without purchasing or contacting sales.
 
-Given an invoice PDF, the extracted TXT output may look like:
+- [Sign up](https://www.compdf.com/compdf-portal/signin?utm_source=github&utm_medium=referral&utm_campaign=compdf_mcp_rep_eno&ref_platform_id=github_compdf_mcp_en) to get your free API key and configure it
+  ![b0a118c5-b3f5-4bc7-bae7-3d0adfc634b2](assets/api_key.png)
 
-```
-Invoice Number: INV-2024-00158
-Date: 2024-03-15
-Vendor: Acme Corporation
-Total Amount: $2,450.00
-Items:
-  - Cloud Hosting Service (12 months): $1,200.00
-  - SSL Certificate (1 year): $150.00
-  - Technical Support (12 months): $1,100.00
-```
+- Suitable for individual trials, feature validation, and workflow testing
 
-## Free Trial and License
+- If you need higher API assets, enterprise deployment, or commercial cooperation, please [contact the sales](https://www.compdf.com/contact-sales?utm_source=github&utm_medium=referral&utm_campaign=compdf_mcp_repo_en&ref_platform_id=github_compdf_mcp_en)
 
-This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Please [contact us](https://www.compdf.com/contact-sales?utm_source=github&utm_medium=comidp-mcp-server&utm_campaign=comidp_mcp_server_repo&ref_platform_id=github_compdfkit) for a trial license key.
+This lowers the barrier to adoption and makes it easier to test real AI document workflows before deciding whether to move into deeper business use.
 
-## FAQ
+## Use Cases and Example Prompts
 
-**Q: How do I get an API key?**
-A: [Contact us](https://www.compdf.com/contact-sales?utm_source=Code&utm_campaign=github_mcpserver_20250912&utm_medium=GitHub) to request a free trial key.
+Upload a PDF, image, or other source file. Enter a task instruction such as extracting tables, converting formats, merging PDFs, or adding watermarks. The agent calls the corresponding ComPDF Server tool and returns the result. If deeper analysis is needed, pass the processed output to AI afterward.
 
-**Q: What file formats are supported?**
-A: PDF, PNG, JPG, TIFF, and other common image formats.
+**Example scenarios:**
 
-**Q: Do I need to pass the API key on every call?**
-A: No. The key is required only on the first call. It is cached automatically for subsequent calls within the same session.
+* In Claude, Cursor, Cline, and similar MCP clients, users upload reports, manuals, or proposal PDFs, convert them to Markdown or Word first, and then ask AI for summaries, knowledge Q&A, or content restructuring
+* In MCP workflows for invoices, statements, scanned tables, and image attachments, users extract tables and structured data first, then move into finance review, data entry, or automated routing
+* When organizing contracts, bids, quotations, or archived files in agent workflows, users first merge, split, watermark, and convert PDFs, then hand them off to AI for organization, naming, or outbound preparation
+* In multi-step automation workflows, users first turn PDF or image files into lightweight CSV, JSON, or TXT outputs, then let downstream agents handle field normalization, approval flows, knowledge base ingestion, or script orchestration
 
-**Q: Which MCP clients are supported?**
-A: Any MCP-compatible client, including Claude Desktop, Cursor, Windsurf, Cline, and more.
+**Example prompts:**
 
-## Support
+* Convert this PDF into Word and preserve the layout as much as possible.
+* Extract all tables from this PDF and export them as CSV.
+* Convert this image into JSON and return structured content.
+* Merge these PDFs, add a watermark, and return the final file.
+* Convert this report into Markdown first, then summarize the key points.
 
-If you encounter any issues or need support, please open an issue or [contact our team](https://www.compdf.com/support?utm_source=Code&utm_campaign=github_mcpserver_20250912&utm_medium=GitHub).
+---
+
+<p align="center">
+  <b>Built by the ComPDF team.</b><br>
+  <a href="https://www.compdf.com?utm_source=github&utm_medium=referral&utm_campaign=compdf_mcp_repo_en&ref_platform_id=github_compdf_mcp_en">Website</a> ·
+  <a href="https://www.compdf.com/contact-sales?utm_source=github&utm_medium=referral&utm_campaign=compdf_mcp_repo_en&ref_platform_id=github_compdf_mcp_en">Contact Sales</a> ·
+  <a href="https://www.compdf.com/support?utm_source=github&utm_medium=referral&utm_campaign=compdf_mcp_repo_en&ref_platform_id=github_compdf_mcp_en">Tech Support</a>
+</p>
+

@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.git
+.github
+.venv
+__pycache__
+*.py[cod]
+*.egg-info
+build
+dist
+tests
+docs
+assets
+MCP_*.xlsx
+MCP_*.md

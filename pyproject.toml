@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compdf-mcp"
+version = "0.1.0"
+description = "ComPDF API v2 MCP service over Streamable HTTP."
+readme = "README_STREAMING_HTTP.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.9,<2",
+  "python-dotenv>=1,<2",
+]
+
+[project.scripts]
+compdf-streaming-mcp = "compdf_streaming_mcp.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["compdf_streaming_mcp*"]
+
+[tool.setuptools.package-data]
+compdf_streaming_mcp = ["official_parameter_schemas.json"]

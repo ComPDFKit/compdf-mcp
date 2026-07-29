@@ -1,0 +1,18 @@
+services:
+  compdf-mcp:
+    image: compdf-mcp:0.1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "${MCP_BIND_HOST:-127.0.0.1}:8000:8000"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=64m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL

@@ -1,0 +1,3028 @@
+{
+  "source": "https://www.compdf.com/guides/api-reference/v2/",
+  "generatedAt": "2026-07-27T02:04:08.885Z",
+  "operations": {
+    "pdf_to_ppt": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain images in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain annotations in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain page background images. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "Page layout mode. Default: `e_Flow`. Supported values: `e_Flow` or `e_Box`.",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "pdf_to_html": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain images in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain annotations in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain page background images. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "Page layout mode. Default: `e_Flow`. Supported values: `e_Flow` or `e_Box`.",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        },
+        "htmlOption": {
+          "type": "string",
+          "description": "HTML options.",
+          "example": "e_SinglePage"
+        }
+      }
+    },
+    "pdf_to_image": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "imageFormat": {
+          "type": "string",
+          "description": "Output image format. Default: `JPG`. Supported values: `JPG`, `JPEG`, `JPEG2000`, `PNG`, `BMP`, `TIFF`, `TGA`, `GIF`, or `WEBP`.",
+          "default": "JPG",
+          "example": "JPG"
+        },
+        "imageColorMode": {
+          "type": "string",
+          "description": "Image color mode. Default: `e_Color`. Supported values: `e_Color`, `e_Gray`, or `e_Binary`.",
+          "default": "e_Color",
+          "example": "e_Color"
+        },
+        "imageScaling": {
+          "type": "number",
+          "description": "Image scaling ratio. Default: `1.0`.",
+          "default": 1,
+          "example": 1
+        }
+      }
+    },
+    "pdf_to_excel": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "excelAllContent": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert all content. 1: yes; 0: no. Default is 1.",
+          "example": 1
+        },
+        "excelWorksheetOption": {
+          "type": "string",
+          "description": "Excel worksheet strategy. Default: `e_ForTable`. Supported values: `e_ForTable`, `e_ForPage`, or `e_ForDocument`.",
+          "default": "e_ForTable",
+          "example": "e_ForTable"
+        }
+      }
+    },
+    "pdf_to_rtf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain images in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain annotations in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain page background images. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "Page layout mode. Default: `e_Flow`. Supported values: `e_Flow` or `e_Box`.",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "pdf_to_txt": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "txtTableFormat": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to preserve table formatting in TXT output. 0 = no, 1 = yes. Default: 1.",
+          "default": 1,
+          "example": 1
+        }
+      }
+    },
+    "pdf_to_csv": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        }
+      }
+    },
+    "pdf_to_word": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain images in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain annotations in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain page background images. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "Page layout mode. Default: `e_Flow`. Supported values: `e_Flow` or `e_Box`.",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "pdf_to_ofd": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0. For OFD output, OCR is forced on by the backend.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain images in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain annotations in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain page background images. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "Page layout mode. Default: `e_Flow`. Supported values: `e_Flow` or `e_Box`.",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "word_to_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "pdf_to_editable_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Enable OCR (0 = off, 1 = on). Default is 1.",
+          "example": 1
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留图片（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留批注（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否保留页面背景图（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "页面版式模式，默认 `e_Flow`：`e_Flow` 或 `e_Box`。",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        },
+        "transparentText": {
+          "type": "integer",
+          "format": "int32",
+          "description": "透明文本层（0=否，1=是，默认 1）。",
+          "default": 1,
+          "example": 1
+        }
+      }
+    },
+    "ppt_to_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "html_to_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "pdf_to_json": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain images in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain annotations in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain page background images. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "Page layout mode. Default: `e_Flow`. Supported values: `e_Flow` or `e_Box`.",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "excel_to_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "pdf_to_markdown": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range to convert. Page numbers start from 1, for example 1-3,6. Leave empty to convert all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable OCR. 0 = disabled, 1 = enabled. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR recognition language. Default: `AUTO`. <a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">View supported languages</a>.",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page. 0 = no, 1 = yes. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to enable AI layout recognition. 0 = disabled, 1 = enabled. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain images in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain annotations in the output. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to retain page background images. 0 = do not retain, 1 = retain. Default: 1.",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "Page layout mode. Default: `e_Flow`. Supported values: `e_Flow` or `e_Box`.",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "image_to_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "image_to_word": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否启用 OCR（0=关闭，1=开启，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留图片（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留批注（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否保留页面背景图（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "页面版式模式，默认 `e_Flow`：`e_Flow` 或 `e_Box`。",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "txt_to_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "csv_to_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "image_to_ppt": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否启用 OCR（0=关闭，1=开启，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留图片（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留批注（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否保留页面背景图（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "页面版式模式，默认 `e_Flow`：`e_Flow` 或 `e_Box`。",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "rtf_to_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "image_to_html": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否启用 OCR（0=关闭，1=开启，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留图片（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留批注（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否保留页面背景图（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "页面版式模式，默认 `e_Flow`：`e_Flow` 或 `e_Box`。",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        },
+        "htmlOption": {
+          "type": "string",
+          "description": "HTML options. `e_SinglePage`: convert the entire PDF file into a single HTML file; `e_SinglePageWithBookmark`: convert the PDF file into a single HTML file and provide a navigation outline at the beginning of the HTML page; `e_MultiPage`: convert the PDF file into multiple HTML files; `e_MultiPageWithBookmark`: convert the PDF file into multiple HTML files. Each HTML file corresponds to one PDF page, and users can navigate to the next HTML file through the link at the bottom of the HTML page. Default is `e_SinglePage`.",
+          "example": "e_SinglePage"
+        }
+      }
+    },
+    "image_to_excel": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否启用 OCR（0=关闭，1=开启，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "excelAllContent": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert all content. 1: yes; 0: no. Default is 1.",
+          "example": 1
+        },
+        "excelWorksheetOption": {
+          "type": "string",
+          "description": "Excel 工作表策略，默认 `e_ForTable`：`e_ForTable`、`e_ForPage` 或 `e_ForDocument`。",
+          "default": "e_ForTable",
+          "example": "e_ForTable"
+        }
+      }
+    },
+    "image_to_json": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否启用 OCR（0=关闭，1=开启，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留图片（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留批注（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否保留页面背景图（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "页面版式模式，默认 `e_Flow`：`e_Flow` 或 `e_Box`。",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "document_parse": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)",
+          "default": 2
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range. Page numbers start from 1, for example 1-3,6. Empty means all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Enable OCR (0 = off, 1 = on)",
+          "default": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言代码，<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR strategy: ALL, SCAN_PAGE, INVALID_CHARACTER, or INVALID_CHARACTER_AND_SCAN_PAGE"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page (0 = no, 1 = yes)",
+          "default": 0
+        },
+        "imageType": {
+          "type": "string",
+          "description": "Query parameter image_type for AI Single-Point /parse, e.g. \"url\" (default).",
+          "default": "url"
+        },
+        "contentFilter": {
+          "type": "string",
+          "description": "Query parameter content_filter for AI Single-Point /parse. Enum: all / table / heading / toc / image / formula. Defaults to \"all\".",
+          "default": "all"
+        },
+        "parseOptions": {
+          "type": "string",
+          "description": "JSON string for parse configuration, passed as-is to the multipart field parse_options for AI Single-Point. See the ComPDF AI API Reference for full field definitions of parse_options."
+        }
+      }
+    },
+    "merge_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "List of PDF files to merge (at least 2). Submission order determines merge order.",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "Default open password. Use this if all source PDFs share the same password; otherwise use passwords[] for per-file passwords."
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language. 1 = English, 2 = Chinese (default).",
+          "example": 2
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL after async task completion. Not effective in synchronous mode; no callback if omitted."
+        },
+        "filePageRanges": {
+          "type": "array",
+          "description": "与 file[] 列表一一对应的页范围；每个文件单独一项。页码从 1 开始，可填写 \"all\" 或 \"1-3,6\"（多段以英文逗号分隔）。",
+          "example": [
+            "all",
+            "1-3,5-7"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "passwords": {
+          "type": "array",
+          "description": "与 file[] 列表一一对应的打开密码；不需要密码的位置用空字符串占位。",
+          "example": [
+            "",
+            "secret"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output PDF file name. Defaults to merged.pdf if not provided.",
+          "example": "merged.pdf"
+        }
+      }
+    },
+    "image_to_txt": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否启用 OCR（0=关闭，1=开启，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "txtTableFormat": {
+          "type": "integer",
+          "format": "int32",
+          "description": "TXT 输出时是否保留表格格式（0=否，1=是，默认 1）。",
+          "default": 1,
+          "example": 1
+        }
+      }
+    },
+    "generate_pdf": {
+      "required": [],
+      "properties": {
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "generationType": {
+          "type": "string",
+          "description": "Generation type: html or template. Auto-detected from template/data/templateFile/dataFile if omitted; defaults to html."
+        },
+        "html": {
+          "type": "string",
+          "description": "HTML string. Mutually exclusive with htmlFile and htmlUrl."
+        },
+        "htmlUrl": {
+          "type": "string",
+          "description": "HTTP/HTTPS HTML URL."
+        },
+        "htmlFile": {
+          "type": "string",
+          "format": "binary",
+          "description": "HTML file."
+        },
+        "template": {
+          "type": "string",
+          "description": "HTML template string. Mutually exclusive with templateFile."
+        },
+        "templateFile": {
+          "type": "string",
+          "format": "binary",
+          "description": "HTML template file."
+        },
+        "data": {
+          "type": "string",
+          "description": "Template data JSON string. Mutually exclusive with dataFile."
+        },
+        "dataFile": {
+          "type": "string",
+          "format": "binary",
+          "description": "Template data JSON file."
+        },
+        "baseUri": {
+          "type": "string",
+          "description": "Relative resource base path or URL."
+        },
+        "pageWidth": {
+          "type": "number",
+          "description": "Page width in pt. Mapped to request.pageSize.width."
+        },
+        "pageHeight": {
+          "type": "number",
+          "description": "Page height in pt. Mapped to request.pageSize.height."
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name."
+        }
+      }
+    },
+    "image_to_csv": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否启用 OCR（0=关闭，1=开启，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        }
+      }
+    },
+    "document_extract": {
+      "required": [
+        "file",
+        "extract_fields"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)",
+          "default": 2
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "Page range. Page numbers start from 1, for example 1-3,6. Empty means all pages.",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Enable OCR (0 = off, 1 = on)",
+          "default": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言代码，<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR strategy: ALL, SCAN_PAGE, INVALID_CHARACTER, or INVALID_CHARACTER_AND_SCAN_PAGE"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to output one file per page (0 = no, 1 = yes)",
+          "default": 0
+        },
+        "mode": {
+          "type": "string",
+          "description": "抽取模式：vision（默认，基于视觉模型逐页抽取，手写体识别效果更好）或 layout（基于版面结构的一体化抽取，支持大文件、跨页与结果溯源）。两种模式均使用 extract_fields 传入固定抽取 schema。",
+          "default": "vision",
+          "enum": [
+            "layout",
+            "vision"
+          ],
+          "example": "vision"
+        },
+        "extractFields": {
+          "type": "string",
+          "description": "抽取 schema 的 JSON 字符串（snake_case 别名），vision 与 layout 模式均使用此字段；layout 模式不再使用 document_types 数组。",
+          "example": "{\"name\":\"Invoice\",\"keys\":{\"Title\":{\"prompt\":\"标题\",\"mapping\":null}},\"tableHeaders\":{}}"
+        },
+        "enableGrounding": {
+          "type": "boolean",
+          "description": "可选。snake_case 形式，",
+          "example": true
+        },
+        "optionsJson": {
+          "type": "string",
+          "description": "可选。options_json 是一个 JSON 字符串，可包含模型配置参数和 ignore_labels；ignore_labels 仅支持 number、footnote、header、header_image、footer、footer_image、aside_text，传入即表示忽略。完整示例：{\"use_doc_unwarping\":false,\"use_chart_recognition\":false,\"use_seal_recognition\":false,\"use_ocr_for_image_block\":false,\"use_layout_detection\":true,\"layout_shape_mode\":\"auto\",\"merge_tables\":true,\"relevel_titles\":true,\"concatenate_pages\":false,\"ignore_labels\":[]}",
+          "example": "{\"use_doc_unwarping\":false,\"use_chart_recognition\":false,\"use_seal_recognition\":false,\"use_ocr_for_image_block\":false,\"use_layout_detection\":true,\"layout_shape_mode\":\"auto\",\"merge_tables\":true,\"relevel_titles\":true,\"concatenate_pages\":false,\"ignore_labels\":[]}"
+        }
+      }
+    },
+    "image_to_rtf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pageRanges": {
+          "type": "string",
+          "description": "需要转换的页码范围。页码从 1 开始，例如 1-3,6；为空表示全部页。",
+          "example": "1-3,6"
+        },
+        "enableOcr": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否启用 OCR（0=关闭，1=开启，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "ocrRecognitionLang": {
+          "type": "string",
+          "description": "OCR 识别语言，默认 `AUTO`。<a href=\"https://www.compdf.com/guides/api-reference/v2/ocr-languages\">查看支持语言</a>。",
+          "default": "AUTO",
+          "example": "AUTO"
+        },
+        "ocrOption": {
+          "type": "string",
+          "description": "OCR recognition scope. Supported types: INVALID_CHARACTER: recognize invalid characters in PDF documents; SCAN_PAGE: recognize scanned pages in PDF documents; INVALID_CHARACTERAND_SCAN_PAGE: recognize invalid characters and scanned pages in PDF documents; ALL: recognize all characters on all pages; default ALL.",
+          "default": "ALL",
+          "example": "ALL"
+        },
+        "isOutputDocumentPerPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否按页输出文件（0=否，1=是，默认 0）。",
+          "default": 0,
+          "example": 0
+        },
+        "enableAiLayout": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否开启 AI 版面识别（0=关闭，1=开启，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainImg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留图片（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "isContainAnnot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否在输出结果中保留批注（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "containPageBackgroundImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否保留页面背景图（0=不保留，1=保留，默认 1）。",
+          "default": 1,
+          "example": 1
+        },
+        "formulaToImage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Whether to convert formulas to images. 0 = keep editable, 1 = convert to images. Default: 0.",
+          "default": 0,
+          "example": 0
+        },
+        "pageLayoutMode": {
+          "type": "string",
+          "description": "页面版式模式，默认 `e_Flow`：`e_Flow` 或 `e_Box`。",
+          "default": "e_Flow",
+          "example": "e_Flow"
+        }
+      }
+    },
+    "insert_pdf_pages": {
+      "required": [
+        "actionType",
+        "index"
+      ],
+      "properties": {
+        "actionType": {
+          "type": "string",
+          "description": "Operation type. FROM_PDF: insert pages from another PDF (requires 2 files). BLANK: insert blank pages (requires 1 file with width/height).",
+          "enum": [
+            "FROM_PDF",
+            "BLANK"
+          ]
+        },
+        "file": {
+          "type": "array",
+          "description": "Uploaded files. file[0] is the target PDF. file[1] is the source PDF whose pages will be inserted into the target PDF. FROM_PDF requires both files.",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "urls": {
+          "type": "array",
+          "description": "Remote URL list, mutually exclusive with file",
+          "items": {
+            "type": "string"
+          }
+        },
+        "index": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Insert position, starting from 1. It indicates where pages from the second file will be inserted into the first file."
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        },
+        "width": {
+          "type": "number",
+          "format": "double",
+          "description": "Page width in pt"
+        },
+        "height": {
+          "type": "number",
+          "format": "double",
+          "description": "Page height in pt"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Number of pages to insert, default 1",
+          "default": 1
+        },
+        "sourcePages": {
+          "type": "string",
+          "description": "Which pages to take from the second file, for example \"1-3,6\". Leave empty to insert all pages from the second file into the first file."
+        },
+        "sourcePageRanges": {
+          "type": "string",
+          "description": "Backward-compatible alias of sourcePages"
+        },
+        "targetPassword": {
+          "type": "string",
+          "description": "Target PDF password"
+        },
+        "insertPassword": {
+          "type": "string",
+          "description": "Source PDF password"
+        },
+        "password": {
+          "type": "string",
+          "description": "Upload password for the main file"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language. 1 = English, 2 = Chinese."
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "delete_pdf_pages": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pages": {
+          "type": "string",
+          "description": "需要处理的页范围。页码从 1 开始；多段以英文逗号分隔，每段可填写单页页码或 a-b 闭区间。示例：1-3,6 表示第 1~3 页和第 6 页。",
+          "example": "1-3,6"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    },
+    "add_watermark": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "type": {
+          "type": "string",
+          "description": "Watermark type: text or image"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text watermark content"
+        },
+        "fontSize": {
+          "type": "number",
+          "description": "Text font size"
+        },
+        "fontColor": {
+          "type": "string",
+          "description": "Text color, e.g. #D32F2F"
+        },
+        "opacity": {
+          "type": "number",
+          "description": "Opacity (0–1)"
+        },
+        "rotation": {
+          "type": "number",
+          "description": "Rotation angle"
+        },
+        "horizalign": {
+          "type": "string",
+          "description": "Horizontal alignment: left, center, or right"
+        },
+        "vertalign": {
+          "type": "string",
+          "description": "Vertical alignment: top, center, or bottom"
+        },
+        "horizOffset": {
+          "type": "number",
+          "description": "Horizontal offset"
+        },
+        "vertOffset": {
+          "type": "number",
+          "description": "Vertical offset"
+        },
+        "pages": {
+          "type": "string",
+          "description": "应用页范围。页码从 1 开始，格式如 \"1-3,6\"；默认 all。",
+          "default": "all",
+          "example": "1-3,6"
+        },
+        "fullScreen": {
+          "type": "boolean",
+          "description": "Whether to tile"
+        },
+        "horizontalSpacing": {
+          "type": "number",
+          "description": "Horizontal spacing when tiling"
+        },
+        "verticalSpacing": {
+          "type": "number",
+          "description": "Vertical spacing when tiling"
+        },
+        "imageFile": {
+          "type": "string",
+          "format": "binary",
+          "description": "Image watermark file (required when type=image)"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    },
+    "rotate_pdf_pages": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pages": {
+          "type": "string",
+          "description": "需要处理的页范围。页码从 1 开始；多段以英文逗号分隔，每段可填写单页页码或 a-b 闭区间。示例：1-3,6 表示第 1~3 页和第 6 页。",
+          "example": "1-3,6"
+        },
+        "angle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Rotation angle: 90, 180, or 270"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    },
+    "extract_pdf_pages": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "pages": {
+          "type": "string",
+          "description": "需要处理的页范围。页码从 1 开始；多段以英文逗号分隔，每段可填写单页页码或 a-b 闭区间。示例：1-3,6 表示第 1~3 页和第 6 页。",
+          "example": "1-3,6"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    },
+    "remove_watermark": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "mode": {
+          "type": "string",
+          "description": "Delete mode: tagged or untagged"
+        },
+        "indices": {
+          "type": "array",
+          "description": "Watermark index in tagged mode",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "pages": {
+          "type": "string",
+          "description": "需要处理的页范围。页码从 1 开始；多段以英文逗号分隔，每段可填写单页页码或 a-b 闭区间。示例：1-3,6 表示第 1~3 页和第 6 页。",
+          "example": "1-3,6"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    },
+    "convert_pdf_standard": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "standard": {
+          "type": "string",
+          "description": "PDF standard. Supported values: PDFTypeA1a, PDFTypeA1b, PDFTypeA2a, PDFTypeA2u, PDFTypeA2b, PDFTypeX4, PDFTypeE1, PDFTypeUA1. Default: PDFTypeA1a."
+        },
+        "iccFile": {
+          "type": "string",
+          "format": "binary",
+          "description": "ICC profile file"
+        },
+        "uaTitle": {
+          "type": "string",
+          "description": "PDF/UA title (optional for pdfua1)"
+        },
+        "uaLanguage": {
+          "type": "string",
+          "description": "PDF/UA language (optional for pdfua1)"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    },
+    "split_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "zipFileName": {
+          "type": "string",
+          "description": "Output ZIP file name"
+        },
+        "pages": {
+          "type": "string",
+          "description": "需要处理的页范围。页码从 1 开始；多段以英文逗号分隔，每段可填写单页页码或 a-b 闭区间。示例：1-3,6 表示第 1~3 页和第 6 页。",
+          "example": "1-3,6"
+        }
+      }
+    },
+    "decrypt_pdf": {
+      "required": [],
+      "properties": {
+        "file": {
+          "type": "string",
+          "format": "binary",
+          "description": "Upload file"
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        }
+      }
+    },
+    "encrypt_pdf": {
+      "required": [],
+      "properties": {
+        "file": {
+          "type": "string",
+          "format": "binary",
+          "description": "Upload file"
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "userPassword": {
+          "type": "string",
+          "description": "User password. This is the password required to open the encrypted PDF. Fill in at least one of `userPassword` or `ownerPassword`."
+        },
+        "ownerPassword": {
+          "type": "string",
+          "description": "Owner password. This is used for permission control and later permission removal. It can control permissions such as printing, copying, editing, commenting, and form filling. Use a value different from `userPassword` when possible."
+        },
+        "algorithm": {
+          "type": "string",
+          "description": "Encryption algorithm. Allowed values: `rc4`, `aes128`, `aes256`. Default: `rc4`.",
+          "default": "rc4",
+          "enum": [
+            "rc4",
+            "aes128",
+            "aes256"
+          ],
+          "example": "rc4"
+        },
+        "allowPrint": {
+          "type": "boolean",
+          "description": "Whether printing is allowed. Enter `true` or `false`. Default: `false`.",
+          "default": false,
+          "example": false
+        },
+        "allowCopy": {
+          "type": "boolean",
+          "description": "Whether copying PDF content is allowed. Enter `true` or `false`. Default: `false`.",
+          "default": false,
+          "example": false
+        },
+        "allowDocumentChanges": {
+          "type": "boolean",
+          "description": "Whether modifying document content is allowed. Enter `true` or `false`. Default: `false`.",
+          "default": false,
+          "example": false
+        },
+        "allowDocumentAssembly": {
+          "type": "boolean",
+          "description": "Whether page assembly is allowed, such as inserting, deleting, rotating, or reordering pages. Enter `true` or `false`. Default: `false`.",
+          "default": false,
+          "example": false
+        },
+        "allowCommenting": {
+          "type": "boolean",
+          "description": "Whether adding or editing comments is allowed. Enter `true` or `false`. Default: `false`.",
+          "default": false,
+          "example": false
+        },
+        "allowFormFieldEntry": {
+          "type": "boolean",
+          "description": "Whether filling form fields is allowed. Enter `true` or `false`. Default: `false`.",
+          "default": false,
+          "example": false
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    },
+    "compare_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "mode": {
+          "type": "string",
+          "description": "Compare mode: content or overlay"
+        },
+        "basePassword": {
+          "type": "string",
+          "description": "Base PDF password"
+        },
+        "comparePassword": {
+          "type": "string",
+          "description": "Compare PDF password"
+        },
+        "replaceColor": {
+          "type": "string",
+          "description": "Defines the color of replaced content (default: #93B9FD)."
+        },
+        "insertColor": {
+          "type": "string",
+          "description": "Defines the color of inserted content (default: #C0FFEC)."
+        },
+        "overlayBaseColor": {
+          "type": "string",
+          "description": "Base color in overlay mode"
+        },
+        "overlayCompareColor": {
+          "type": "string",
+          "description": "Compare color in overlay mode"
+        },
+        "fillAlphaBase": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Base opacity in overlay mode (0–100)"
+        },
+        "fillAlphaCompare": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Compare opacity in overlay mode (0–100)"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    },
+    "compress_pdf": {
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "array",
+          "description": "Upload file",
+          "items": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "File password (if the PDF is password-protected)"
+        },
+        "language": {
+          "type": "integer",
+          "format": "int32",
+          "description": "API error message language (1 = English, 2 = Chinese)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "Callback URL"
+        },
+        "optimizeFlags": {
+          "type": "array",
+          "description": "Optimization flag list used to specify which optimization actions to apply during compression. In Try it, enter one flag per line; the request is submitted as a list. You can also enter a JSON array, for example `[\"RMNOTUSE\",\"RMEPTOBJ\"]`. See the full flag list in [Compression Parameters](/guides/api-reference/v2/optimization-flags).",
+          "example": [
+            "RMNOTUSE",
+            "RMEPTOBJ",
+            "BCOMPRESSIMAGE"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "imageQuality": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Image quality (0–100)"
+        },
+        "colorImageUpperPpi": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Color image maximum PPI"
+        },
+        "colorImageTargetPpi": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Color image target PPI"
+        },
+        "colorImageCompressAlgorithm": {
+          "type": "string",
+          "description": "Color image compression algorithm: jpeg or flate"
+        },
+        "colorImageQuality": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Color image quality (0–100)"
+        },
+        "grayscaleImageUpperPpi": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Grayscale image maximum PPI"
+        },
+        "grayscaleImageTargetPpi": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Grayscale image target PPI"
+        },
+        "monochromeImageUpperPpi": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Black-and-white image maximum PPI"
+        },
+        "monochromeImageTargetPpi": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Black-and-white image target PPI"
+        },
+        "monochromeImageCompressAlgorithm": {
+          "type": "string",
+          "description": "Black-and-white image compression algorithm: jbig2 or flate"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name"
+        }
+      }
+    }
+  }
+}

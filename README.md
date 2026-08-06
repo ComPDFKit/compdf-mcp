@@ -1,4 +1,4 @@
-![compdf-github-banner 1](assets/compdf-github-banner%201.png)
+![compdf-github-banner 1](assets/ComPDF-Comprehensive%20PDF%20Solutions.png)
 
 # ComPDF MCP
 

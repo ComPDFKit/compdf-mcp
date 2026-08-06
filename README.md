@@ -1,5 +1,5 @@
 ![compdf-github-banner 1](assets/ComPDF-Comprehensive%20PDF%20Solutions.png)
-
+[English](README.md) | [繁體中文](README_繁中.md) | [日本語](README_JA.md) | [简体中文](README_CN.md)
 # ComPDF MCP
 
 ComPDF MCP is built for MCP clients and AI agent platforms. It provides PDF/image parsing and data extraction, PDF conversion, PDF editing, and image conversion capabilities. It helps users process raw documents first, then pass lighter, cleaner, and more structured results into AI, reducing token usage, lowering AI costs, and improving overall processing efficiency.

@@ -1,4 +1,5 @@
-![compdf-github-banner 1](assets/compdf-github-banner%201.png)
+![compdf-github-banner 1](assets/ComPDF-Comprehensive%20PDF%20Solutions.png)
+[English](README.md) | [繁體中文](README_繁中.md) | [日本語](README_JA.md) | [简体中文](README_CN.md)
 
 # ComPDF MCP
 
